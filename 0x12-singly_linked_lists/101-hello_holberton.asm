@@ -1,16 +1,17 @@
 global   main
-	  extern    printf
+	extern    printf
 main:
-	  mov   edi, format
-	  xor   eax, eax
-	  call  printf
-	  mov   eax, 0
-	  ret
+	mov   edi, format
+	xor   eax, eax
+	call  printf
+	mov   eax, 0
+	ret
 format: db `Hello, Holberton\n`,0
 
 
 
-=====================================. If 11-hello failed to check
+=====================================. 
+If 11-hello failed to check
 You can try the code below
 
 
