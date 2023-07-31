@@ -13,7 +13,7 @@ size_t countlist = 0;
 
 while (h != NULL)
 {
-printf("%d\n", h->data);
+printf("%d\n", h->n);
 countlist++;
 h = h->next;
 }
