@@ -1,4 +1,4 @@
-#include <elf.h>
+nclude <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -39,6 +39,7 @@ void check_elf(unsigned char *e_ident)
 		}
 	}
 }
+
 
 /**
  * print_magic - Prints the magic numbers of an ELF header.
@@ -87,6 +88,7 @@ void print_class(unsigned char *e_ident)
 	}
 }
 
+
 /**
  * print_data - Prints the data of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
@@ -130,6 +132,8 @@ void print_version(unsigned char *e_ident)
 		break;
 	}
 }
+
+
 /**
  * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
@@ -175,6 +179,7 @@ void print_osabi(unsigned char *e_ident)
 	}
 }
 
+
 /**
  * print_abi - Prints the ABI version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF ABI version.
@@ -218,6 +223,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 		printf("<unknown: %x>\n", e_type);
 	}
 }
+
 
 /**
  * print_entry - Prints the entry point of an ELF header.
@@ -295,7 +301,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
@@ -311,4 +316,3 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
-
